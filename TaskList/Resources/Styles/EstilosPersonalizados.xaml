@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- Fondo Beige -->
+    <Color x:Key="BackgroundBeige">#F5F5DC</Color>
+
+    <!-- Estilo para botones -->
+    <Style TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Black" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="CornerRadius" Value="5" />
+        <Setter Property="Padding" Value="10" />
+    </Style>
+
+    <!-- Estilo para texto en etiquetas -->
+    <Style TargetType="Label">
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+
+    <!-- Estilo para cuadros de texto -->
+    <Style TargetType="Entry">
+        <Setter Property="TextColor" Value="Black" />
+    </Style>
+</ResourceDictionary>

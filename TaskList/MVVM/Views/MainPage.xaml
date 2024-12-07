@@ -1,0 +1,31 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskList.MVVM.Views.MainPage"
+             BackgroundColor="{StaticResource BackgroundBeige}">
+
+    <VerticalStackLayout Padding="20">
+        <Label Text="Lista de Tareas"
+               FontSize="24"
+               HorizontalOptions="Center"
+               Margin="0,10,0,20" />
+
+        <Entry Text="{Binding NuevaTareaNombre, Mode=TwoWay}" Placeholder="Nombre de la tarea" />
+
+        <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+            <Button Text="Agregar" Command="{Binding AgregarTareaCommand}" />
+            <Button Text="Editar" Command="{Binding EditarTareaCommand}" />
+            <Button Text="Eliminar" Command="{Binding EliminarTareaCommand}" />
+        </HorizontalStackLayout>
+
+        <CollectionView ItemsSource="{Binding Tareas}" SelectionMode="Single" SelectedItem="{Binding TareaSeleccionada}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" Spacing="10">
+                        <CheckBox IsChecked="{Binding Completada}" />
+                        <Label Text="{Binding Nombre}" VerticalOptions="Center" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>
